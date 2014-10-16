@@ -12,11 +12,6 @@
       {{/each}}
     </ul>
   <div class="panel-footer">
-    <div class="input-group">
-      <input type="text" class="form-control" placeholder="Player's Name">
-      <span class="input-group-addon submit-button">
-        Add player
-      </span>
-    </div>
+    <player-create></player-create>
   </div>
 </div>

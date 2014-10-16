@@ -1,0 +1,6 @@
+<div class="input-group">
+  <input can-enter="{createPlayer}" type="text" class="form-control" placeholder="Player's Name">
+  <span class="input-group-addon submit-button">
+    Add player
+  </span>
+</div>

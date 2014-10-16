@@ -1,0 +1,2 @@
+1. Why new elements doesn't refresh the DOM?
+2. Why new elements are not removed form the DOM?

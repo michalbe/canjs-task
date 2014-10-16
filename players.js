@@ -7,10 +7,26 @@ BASKETBALL.players = (function() {
     scope: {}
   });
 
-  var PlayersModel = can.Model.extend({
+	can.Component.extend({
+    tag: "player-create",
+    template: can.view('templates/player-create.stache'),
+    scope: {
+      createPlayer: function(context, el, ev) {
+        new Player({
+          name: el.val()
+        }).save().then(function(addedPlayer) {
+          el.val("");
+          BASKETBALL.lists.players.push(addedPlayer);
+        });
+      }
+    }
+  });
+
+  var Player = can.Model.extend({
     findAll: "GET /services/players",
-    destroy: "DELETE /services/players/{id}"
+    destroy: "DELETE /services/players/{id}",
+    create: "POST /services/players"
   }, {});
 
-  return PlayersModel;
+  return Player;
 })();

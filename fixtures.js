@@ -20,6 +20,7 @@
     }
 
     var destroyPlayer = function(id) {
+      console.log('qwe');
       for(var i = 0, l = players.length; i < l; i++){
         if(players[i].id == id) {
           players.splice(i, 1);
@@ -37,9 +38,21 @@
       }
     }
 
+    var addPlayer = function(name) {
+      var player = {
+        id: players.length,
+        name: name,
+        team: 0
+      };
+      players.push(player);
+
+      return player;
+    };
+
     return {
       getAllPlayers: getAllPlayers,
       destroyPlayer: destroyPlayer,
+      addPlayer: addPlayer,
 
       getAllTeams: getAllTeams,
       destroyTeam: destroyTeam,
@@ -54,6 +67,14 @@
     "DELETE /services/players/{id}": function(request) {
       LS.destroyPlayer(request.data.id);
       return {};
+    },
+    "POST /services/players":  function(request, response) {
+    	console.log("creating a player", request.data);
+      var player = $.extend({},request.data);
+      var id = LS.addPlayer(player);
+      response({
+        id: id
+      });
     },
 
     "GET /services/teams":  function() {
