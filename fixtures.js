@@ -11,12 +11,23 @@
       teams = BASKETBALL.defaults.teams();
     }
 
-    console.log(players, teams);
+    var getAllPlayers = function(){
+      return players;
+    }
+
+    var getAllTeams = function(){
+      return teams;
+    }
+
+    return {
+      getAllPlayers: getAllPlayers,
+      getAllTeams: getAllTeams
+    }
   })();
 
   can.fixture({
     "GET /services/players":  function() {
-
+      return LS.getAllPlayers
     }
   });
 })();
