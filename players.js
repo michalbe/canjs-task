@@ -7,9 +7,10 @@ BASKETBALL.players = (function() {
     scope: {}
   });
 
-  var playersModel = can.Model.extend({
-    findAll: "GET /services/players"
+  var PlayersModel = can.Model.extend({
+    findAll: "GET /services/players",
+    destroy: "DELETE /services/players/{id}"
   }, {});
 
-  return playersModel;
+  return PlayersModel;
 })();

@@ -6,7 +6,9 @@
   </div>
     <ul class="list-group">
       {{#each players}}
-        <li class="list-group-item">{{name}} <span class="glyphicon glyphicon-remove-sign remove-button"></span></li>
+        <li class="list-group-item">{{name}}
+          <span can-click="{destroy}" class="glyphicon glyphicon-remove-sign remove-button"></span>
+        </li>
       {{/each}}
     </ul>
   <div class="panel-footer">

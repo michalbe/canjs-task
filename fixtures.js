@@ -19,9 +19,19 @@
       return teams;
     }
 
+    var destroyPlayer = function(id) {
+      for(var i = 0, l = players.length; i < l; i++){
+        if(players[i].id == id) {
+          players.splice(i, 1);
+          break;
+        }
+      }
+    }
+
     return {
       getAllPlayers: getAllPlayers,
-      getAllTeams: getAllTeams
+      getAllTeams: getAllTeams,
+      destroyPlayer: destroyPlayer
     }
   })();
 
@@ -33,6 +43,11 @@
     "GET /services/teams":  function() {
       var teams = LS.getAllTeams();
       return teams;
+    },
+
+  	"DELETE /services/players/{id}": function(request) {
+      LS.destroyPlayer(request.data.id);
+      return {};
     }
   });
 
