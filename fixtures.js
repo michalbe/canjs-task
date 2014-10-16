@@ -12,7 +12,6 @@
     }
 
     var getAllPlayers = function() {
-      console.log('gap!', players);
       return players;
     }
 
@@ -28,8 +27,9 @@
 
   can.fixture({
     "GET /services/players":  function() {
-      console.log('elo?');
-      return LS.getAllPlayers();
+      var players = LS.getAllPlayers();
+      return players;
     }
   });
+
 })();

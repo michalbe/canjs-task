@@ -12,5 +12,4 @@ BASKETBALL.players = (function() {
   }, {});
 
   return playersModel;
-
 })();
