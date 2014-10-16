@@ -4,23 +4,18 @@ BASKETBALL.Player = (function() {
   can.Component.extend({
     tag: "players-list",
     template: can.view("templates/players-list.stache"),
-    scope: {
-      tempDestroy: function(ctx){
-        console.log('qweqwe', ctx);
-      }
-    }
+    scope: {}
   });
 
 	can.Component.extend({
     tag: "player-create",
     template: can.view('templates/player-create.stache'),
     scope: {
-      createPlayer: function(context, el, ev) {
+      createPlayer: function(ctx, el, ev) {
         new Player({
           name: el.val()
         }).save().then(function(addedPlayer) {
           el.val("");
-          console.log(addedPlayer);
           BASKETBALL.lists.players.push(addedPlayer);
         });
       },
