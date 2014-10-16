@@ -1,12 +1,14 @@
-<div class="page-header">
-  <h1>Basketball manager</h1>
-  <p class="lead">CanJS training task</p>
-</div>
-<div class="row">
-  <div class="col-xs-6">
-    <players-list players="{players}"></players-list>
+<div class="container">
+  <div class="page-header">
+    <h1>Basketball manager</h1>
+    <p class="lead">CanJS training task</p>
   </div>
-  <div class="col-xs-6">
-    <teams-list teams="{teams}"></teams-list>
+  <div class="row">
+    <div class="col-xs-6">
+      <players-list players="{players}"></players-list>
+    </div>
+    <div class="col-xs-6">
+      <teams-list teams="{teams}"></teams-list>
+    </div>
   </div>
 </div>

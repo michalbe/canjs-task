@@ -10,10 +10,10 @@
       {{/each}}
     </ul>
   <div class="panel-footer">
-      <div class="input-group">
-      <input type="text" class="form-control">
-      <span class="input-group-btn">
-        <button class="btn btn-default" type="button">Add player</button>
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="Player's Name">
+      <span class="input-group-addon">
+        Add player
       </span>
     </div>
   </div>
