@@ -5,8 +5,16 @@
   transform: rotate(0) scale(1);
   transition: transform 0.5s, color 0.5s;
 }
-
 .remove-button:hover {
   color: #CD0000;
   transform: rotate(200deg) scale(1.5);
+}
+
+
+.submit-button {
+  cursor:pointer;
+  transition: background-color 0.5s;
+}
+.submit-button:hover {
+  background-color: #CCC;
 }

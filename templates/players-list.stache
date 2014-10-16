@@ -14,7 +14,7 @@
   <div class="panel-footer">
     <div class="input-group">
       <input type="text" class="form-control" placeholder="Player's Name">
-      <span class="input-group-addon">
+      <span class="input-group-addon submit-button">
         Add player
       </span>
     </div>
