@@ -1,14 +1,21 @@
 (function() {
   var LS = (function() {
+    var saveAll = function() {
+      window.localStorage.setItem('players', JSON.stringify(players));
+      window.localStorage.setItem('teams', JSON.stringify(teams));
+    }
+
     var players = JSON.parse(window.localStorage.getItem('players'));
     var teams = JSON.parse(window.localStorage.getItem('teams'));
 
     // if it is the first run, we add some players & teams
     if (players === null) {
       players = BASKETBALL.defaults.players();
+      saveAll();
     }
     if (teams === null) {
       teams = BASKETBALL.defaults.teams();
+      saveAll();
     }
 
     var getAllPlayers = function() {
@@ -26,6 +33,7 @@
           break;
         }
       }
+      saveAll();
     }
 
     var destroyTeam = function(id) {
@@ -35,6 +43,7 @@
           break;
         }
       }
+      saveAll();
     }
 
     var addPlayer = function(name) {
@@ -45,18 +54,19 @@
       };
       players.push(player);
 
+      saveAll();
       return player;
     };
 
     var addTeam = function(team) {
       var team = {
-        id: teams.length,
+        id: teams.length + 1,
         name: team.name,
         color: team.color
       };
-
       teams.push(team);
 
+      saveAll();
       return team;
     };
 
