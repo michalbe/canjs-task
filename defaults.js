@@ -18,6 +18,7 @@ BASKETBALL.defaults = (function() {
       });
     });
 
+    players[0].team = 1;
     return players;
   };
 
