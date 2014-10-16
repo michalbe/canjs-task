@@ -1,5 +1,5 @@
 (function() {
-  var frag = can.view('/templates/app-template.stache',{
+  var frag = can.view('templates/app.stache',{
     players: BASKETBALL.players
   });
 
