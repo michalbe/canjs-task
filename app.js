@@ -1,6 +1,11 @@
 var BASKETBALL = BASKETBALL || {};
 
 (function() {
+  // activate colorpicker
+  setTimeout(function(){
+    $('#colorpicker').colorpicker();
+  }, 500);
+
   BASKETBALL.lists = {
     players: new BASKETBALL.players.List({}),
     teams: new BASKETBALL.teams.List({})
