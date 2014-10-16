@@ -9,7 +9,7 @@
         <li class="list-group-item">
           <span class="glyphicon glyphicon-star" style="color:{{color}}"></span>
            <span can-click={moveToTeam}>{{name}}</span>
-           <span can-click="{destroy}" class="glyphicon glyphicon-remove-sign remove-button"></span>
+           <span can-click="{destroyTeam}" class="glyphicon glyphicon-remove-sign remove-button"></span>
         </li>
            <ul class="list-group team-players">
              {{#each teamPlayers}}
