@@ -7,6 +7,16 @@ BASKETBALL.Team = (function() {
     scope: {
       positions: ['A', 'B', 'C', 'D'],
 
+      destroyTeam: function(team) {
+        this.attr('players').each(function(e, i) {
+          if (e.attr('team') === team.id) {
+            e.attr('team', 0);
+          }
+        });
+
+        team.destroy();
+      },
+
       teamPlayers: function(team) {
         var tPlayers = [];
         var id = team.id;
