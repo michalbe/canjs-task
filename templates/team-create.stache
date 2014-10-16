@@ -1,0 +1,6 @@
+<div class="input-group">
+  <input can-enter="{createTeam}" id="new-team-name" type="text" class="form-control" placeholder="Team's Name">
+  <span can-click="{submitCreateTeamWithButton}" class="input-group-addon submit-button">
+    Add team
+  </span>
+</div>

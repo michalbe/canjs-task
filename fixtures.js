@@ -49,6 +49,16 @@
       return player;
     };
 
+    var addTeam = function(name) {
+      var team = {
+        id: teams.length,
+        name: name
+      };
+      teams.push(team);
+
+      return team;
+    };
+
     return {
       getAllPlayers: getAllPlayers,
       destroyPlayer: destroyPlayer,
@@ -56,6 +66,7 @@
 
       getAllTeams: getAllTeams,
       destroyTeam: destroyTeam,
+      addTeam: addTeam
     }
   })();
 
@@ -69,7 +80,6 @@
       return {};
     },
     "POST /services/players":  function(request, response) {
-    	console.log("creating a player", request.data);
       var player = $.extend({},request.data);
       var id = LS.addPlayer(player);
       response({
@@ -84,7 +94,14 @@
     "DELETE /services/teams/{id}": function(request) {
       LS.destroyTeam(request.data.id);
       return {};
-    }
+    },
+    "POST /services/teams":  function(request, response) {
+      var team = $.extend({},request.data);
+      var id = LS.addTeam(team);
+      response({
+        id: id
+      });
+    },
   });
 
 })();

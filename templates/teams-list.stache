@@ -14,11 +14,6 @@
       {{/each}}
     </ul>
   <div class="panel-footer">
-    <div class="input-group">
-      <input type="text" class="form-control" placeholder="Team's Name">
-      <span class="input-group-addon submit-button">
-        Add team
-      </span>
-    </div>
+    <team-create></team-create>
   </div>
 </div>
