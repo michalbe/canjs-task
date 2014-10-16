@@ -6,7 +6,6 @@
   </head>
   </body>
   <div class="container">
-
       <div class="page-header">
         <h1>Basketball manager</h1>
         <p class="lead">...</p>
@@ -22,13 +21,7 @@
                 Players
               </h4>
             </div>
-            <ul class="list-group">
-              <li class="list-group-item">Cras justo odio</li>
-              <li class="list-group-item">Dapibus ac facilisis in</li>
-              <li class="list-group-item">Morbi leo risus</li>
-              <li class="list-group-item">Porta ac consectetur ac</li>
-              <li class="list-group-item">Vestibulum at eros</li>
-            </ul>
+            <players-list></players-list>
             <div class="panel-footer">
               <div class="input-group">
                 <input type="text" class="form-control">
@@ -67,6 +60,15 @@
         </div>
       </div>
 
+    <!-- TEMPLATES -->
+    <script type='text/stache' id='players-list-template'>
+      <ul class="list-group">
+        {{#each players}}
+          <li class="list-group-item">{{name}}</li>
+        {{/each}}
+      </ul>
+    </script>
+
     </div> <!-- /container -->
     <script src="https://raw.githubusercontent.com/lodash/lodash/2.4.1/dist/lodash.js"></script>
     <script src="http://code.jquery.com/jquery-1.10.1.js"></script>
@@ -79,5 +81,6 @@
     <script src="defaults.js"></script>
     <script src="fixtures.js"></script>
     <script src="models.js"></script>
+    <script src="components.js"></script>
   </body>
 </html>
