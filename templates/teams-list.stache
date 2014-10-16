@@ -1,11 +1,11 @@
 <div class="panel panel-default">
   <div class="panel-heading">
     <h4 class="panel-title">
-      Players
+      Teams
     </h4>
   </div>
     <ul class="list-group">
-      {{#each players}}
+      {{#each teams}}
         <li class="list-group-item">{{name}}</li>
       {{/each}}
     </ul>
@@ -13,7 +13,7 @@
       <div class="input-group">
       <input type="text" class="form-control">
       <span class="input-group-btn">
-        <button class="btn btn-default" type="button">Add player</button>
+        <button class="btn btn-default" type="button">Add team</button>
       </span>
     </div>
   </div>

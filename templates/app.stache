@@ -7,29 +7,6 @@
     <players-list players="{players}"></players-list>
   </div>
   <div class="col-xs-6">
-    <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4 class="panel-title">
-        Teams
-      </h4>
-    </div>
-    <ul class="list-group">
-      <li class="list-group-item"><h5>Blue</h5>
-        <ul class="list-group">
-          <li class="list-group-item">Cras justo odio <span class="badge">A</span></li>
-          <li class="list-group-item">Dapibus ac facilisis in <span class="badge">B</span></li>
-        </ul>
-      </li>
-      <li class="list-group-item">Yellow</li>
-    </ul>
-    <div class="panel-footer">
-      <div class="input-group">
-        <input type="text" class="form-control">
-        <span class="input-group-btn">
-          <button class="btn btn-default" type="button">Add team</button>
-        </span>
-      </div>
-    </div>
-    </div>
+    <teams-list teams="{teams}"></teams-list>
   </div>
 </div>

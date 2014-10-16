@@ -24,7 +24,7 @@ BASKETBALL.defaults = (function() {
   var defaultTeams = function() {
     var teams = [
       {
-        name: "SuperHeroes",
+        name: "Superheroes",
         color: "#F0F"
       },
       {

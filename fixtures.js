@@ -29,6 +29,10 @@
     "GET /services/players":  function() {
       var players = LS.getAllPlayers();
       return players;
+    },
+    "GET /services/teams":  function() {
+      var teams = LS.getAllTeams();
+      return teams;
     }
   });
 
