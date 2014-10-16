@@ -12,8 +12,8 @@
            <span can-click="{destroy}" class="glyphicon glyphicon-remove-sign remove-button"></span>
         </li>
            <ul class="list-group team-players">
-             {{#each players}}
-               <li class="list-group-item small">{{name}}</li>
+             {{#each teamPlayers}}
+               <li class="list-group-item small">{{name}}<span class="badge">{{position}}</span> </li>
              {{/each}}
            </ul>
       {{/each}}

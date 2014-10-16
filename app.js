@@ -7,8 +7,8 @@ var BASKETBALL = BASKETBALL || {};
   }, 500);
 
   BASKETBALL.lists = {
-    players: new BASKETBALL.players.List({}),
-    teams: new BASKETBALL.teams.List({})
+    players: new BASKETBALL.Player.List({}),
+    teams: new BASKETBALL.Team.List({})
   }
 
   var frag = can.view('templates/app.stache',{

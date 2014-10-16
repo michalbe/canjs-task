@@ -1,10 +1,14 @@
 var BASKETBALL = BASKETBALL || {};
 
-BASKETBALL.players = (function() {
+BASKETBALL.Player = (function() {
   can.Component.extend({
     tag: "players-list",
     template: can.view("templates/players-list.stache"),
-    scope: {}
+    scope: {
+      tempDestroy: function(ctx){
+        console.log('qweqwe', ctx);
+      }
+    }
   });
 
 	can.Component.extend({
@@ -16,6 +20,7 @@ BASKETBALL.players = (function() {
           name: el.val()
         }).save().then(function(addedPlayer) {
           el.val("");
+          console.log(addedPlayer);
           BASKETBALL.lists.players.push(addedPlayer);
         });
       },

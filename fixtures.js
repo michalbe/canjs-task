@@ -20,7 +20,6 @@
     }
 
     var destroyPlayer = function(id) {
-      console.log('qwe');
       for(var i = 0, l = players.length; i < l; i++){
         if(players[i].id == id) {
           players.splice(i, 1);
@@ -30,18 +29,27 @@
     }
 
     var destroyTeam = function(id) {
-      for(var i = 0, l = teams.length; i < l; i++){
+      for(var i = 0, l = teams.length; i < l; i++) {
         if(teams[i].id == id) {
           teams.splice(i, 1);
           break;
         }
       }
+
+      // reset players for deleted team
+      for(var i = 0, l = players.length; i < l; i++){
+        if(players[i].team == id) {
+          players[i].team = 0;
+          break;
+        }
+      }
+
     }
 
     var addPlayer = function(name) {
       var player = {
         id: players.length,
-        name: name,
+        name: name.name,
         team: 0
       };
       players.push(player);
@@ -49,11 +57,13 @@
       return player;
     };
 
-    var addTeam = function(name) {
+    var addTeam = function(team) {
       var team = {
         id: teams.length,
-        name: name
+        name: team.name,
+        color: team.color
       };
+
       teams.push(team);
 
       return team;
@@ -81,10 +91,7 @@
     },
     "POST /services/players":  function(request, response) {
       var player = $.extend({},request.data);
-      var id = LS.addPlayer(player);
-      response({
-        id: id
-      });
+      response(LS.addPlayer(player));
     },
 
     "GET /services/teams":  function() {
@@ -97,10 +104,7 @@
     },
     "POST /services/teams":  function(request, response) {
       var team = $.extend({},request.data);
-      var id = LS.addTeam(team);
-      response({
-        id: id
-      });
+      response(LS.addTeam(team));
     },
   });
 

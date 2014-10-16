@@ -25,10 +25,12 @@ BASKETBALL.defaults = (function() {
   var defaultTeams = function() {
     var teams = [
       {
+        id: 1,
         name: "Superheroes",
         color: "#F0F"
       },
       {
+        id: 2,
         name: "Legia Warszawa",
         color: "#F00"
       }
