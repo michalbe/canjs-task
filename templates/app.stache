@@ -8,7 +8,7 @@
       <players-list players="{players}"></players-list>
     </div>
     <div class="col-xs-6">
-      <teams-list teams="{teams}"></teams-list>
+      <teams-list teams="{teams}" players="{players}"></teams-list>
     </div>
   </div>
 </div>
