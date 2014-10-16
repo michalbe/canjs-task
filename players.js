@@ -18,6 +18,10 @@ BASKETBALL.players = (function() {
           el.val("");
           BASKETBALL.lists.players.push(addedPlayer);
         });
+      },
+
+      submitCreatePlayerWithButton: function(ctx, el, ev) {
+        this.createPlayer(null, $('#new-name'));
       }
     }
   });
