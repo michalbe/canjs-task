@@ -5,15 +5,18 @@ BASKETBALL.Team = (function() {
     tag: "teams-list",
     template: can.view("templates/teams-list.stache"),
     scope: {
+      positions: ['A', 'B', 'C', 'D'],
+
       teamPlayers: function(team) {
         var tPlayers = [];
         var id = team.id;
-        this.attr('players').each(function(e, i){
+        var posInd = 0;
+        this.attr('players').each(function(e, i) {
           if (e.attr('team') === id) {
-            e.attr('position', 'A');
+            e.attr('position', this.positions[posInd++]);
             tPlayers.push(e);
           }
-        });
+        }.bind(this));
         return tPlayers;
       },
 
@@ -22,7 +25,7 @@ BASKETBALL.Team = (function() {
       },
 
       moveToTeam: function(e) {
-        if (BASKETBALL.currentPlayer && e.id) {
+        if (BASKETBALL.currentPlayer && e.id && this.teamPlayers(e).length < 4) {
           BASKETBALL.currentPlayer.attr('team', e.id);
           BASKETBALL.currentPlayer = undefined;
         }
