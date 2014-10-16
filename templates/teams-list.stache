@@ -1,12 +1,15 @@
 <div class="panel panel-default">
   <div class="panel-heading">
     <h4 class="panel-title">
-      Teams
+      <span class="glyphicon glyphicon-globe"></span> Teams
     </h4>
   </div>
     <ul class="list-group">
       {{#each teams}}
-        <li class="list-group-item">{{name}}</li>
+        <li class="list-group-item">
+          <span class="glyphicon glyphicon-star" style="color:{{color}}"></span>
+           {{name}}
+        </li>
       {{/each}}
     </ul>
   <div class="panel-footer">

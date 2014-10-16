@@ -1,7 +1,7 @@
 <div class="panel panel-default">
   <div class="panel-heading">
     <h4 class="panel-title">
-      Players
+      <span class="glyphicon glyphicon-user"></span> Players
     </h4>
   </div>
     <ul class="list-group">
