@@ -13,7 +13,8 @@ BASKETBALL.teams = (function() {
     scope: {
       createTeam: function(context, el, ev) {
         new Team({
-          name: el.val()
+          name: el.val(),
+          color: $('#colorpicker')[0].value
         }).save().then(function(addedTeam) {
           el.val("");
           BASKETBALL.lists.teams.push(addedTeam);
