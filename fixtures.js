@@ -35,15 +35,6 @@
           break;
         }
       }
-
-      // reset players for deleted team
-      for(var i = 0, l = players.length; i < l; i++){
-        if(players[i].team == id) {
-          players[i].team = 0;
-          break;
-        }
-      }
-
     }
 
     var addPlayer = function(name) {
