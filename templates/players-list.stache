@@ -1,13 +1,13 @@
 <div class="panel panel-default">
   <div class="panel-heading">
-    <h4 class="panel-title">
+    <h4 class="panel-title" can-click={resetTeam}>
       <span class="glyphicon glyphicon-user"></span> Players
     </h4>
   </div>
     <ul class="list-group">
       {{#each players}}
         {{^team}}
-        <li class="list-group-item">{{name}}
+        <li class="list-group-item" can-click={setCurrentPlayer}>{{name}}
           <span can-click="{destroy}" class="glyphicon glyphicon-remove-sign remove-button"></span>
         </li>
         {{/team}}

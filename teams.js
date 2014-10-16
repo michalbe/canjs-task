@@ -8,13 +8,24 @@ BASKETBALL.Team = (function() {
       teamPlayers: function(team) {
         var tPlayers = [];
         var id = team.id;
-        $.each(this.attr('players'), function(i, e){
-          if (e.team === id) {
+        this.attr('players').each(function(e, i){
+          if (e.attr('team') === id) {
             e.attr('position', 'A');
             tPlayers.push(e);
           }
         });
         return tPlayers;
+      },
+
+      setCurrentPlayer: function(e) {
+        BASKETBALL.currentPlayer = e;
+      },
+
+      moveToTeam: function(e) {
+        if (BASKETBALL.currentPlayer && e.id) {
+          BASKETBALL.currentPlayer.attr('team', e.id);
+          BASKETBALL.currentPlayer = undefined;
+        }
       }
     }
   });
