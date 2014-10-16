@@ -1,4 +1,12 @@
-/*
-.row div {
-  border: 1px #000 solid;
-}*/
+.remove-button {
+  float: right;
+  color: red;
+  cursor: pointer;
+  transform: rotate(0) scale(1);
+  transition: transform 0.5s, color 0.5s;
+}
+
+.remove-button:hover {
+  color: #CD0000;
+  transform: rotate(200deg) scale(1.5);
+}
