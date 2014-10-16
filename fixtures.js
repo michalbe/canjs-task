@@ -28,10 +28,21 @@
       }
     }
 
+    var destroyTeam = function(id) {
+      for(var i = 0, l = teams.length; i < l; i++){
+        if(teams[i].id == id) {
+          teams.splice(i, 1);
+          break;
+        }
+      }
+    }
+
     return {
       getAllPlayers: getAllPlayers,
+      destroyPlayer: destroyPlayer,
+
       getAllTeams: getAllTeams,
-      destroyPlayer: destroyPlayer
+      destroyTeam: destroyTeam,
     }
   })();
 
@@ -40,13 +51,17 @@
       var players = LS.getAllPlayers();
       return players;
     },
+    "DELETE /services/players/{id}": function(request) {
+      LS.destroyPlayer(request.data.id);
+      return {};
+    },
+
     "GET /services/teams":  function() {
       var teams = LS.getAllTeams();
       return teams;
     },
-
-  	"DELETE /services/players/{id}": function(request) {
-      LS.destroyPlayer(request.data.id);
+    "DELETE /services/teams/{id}": function(request) {
+      LS.destroyTeam(request.data.id);
       return {};
     }
   });

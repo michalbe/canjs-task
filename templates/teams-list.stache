@@ -9,6 +9,7 @@
         <li class="list-group-item">
           <span class="glyphicon glyphicon-star" style="color:{{color}}"></span>
            {{name}}
+           <span can-click="{destroy}" class="glyphicon glyphicon-remove-sign remove-button"></span>
         </li>
       {{/each}}
     </ul>
