@@ -1,7 +1,7 @@
 (function() {
   can.Component.extend({
     tag: "players-list",
-    template: can.view("players-list-template"),
+    template: can.view("templates/players-list-template.stache"),
     scope: {}
   });
 })();

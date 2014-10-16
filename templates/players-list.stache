@@ -1,0 +1,6 @@
+
+<ul class="list-group">
+  {{#each players}}
+    <li class="list-group-item">{{name}}</li>
+  {{/each}}
+</ul>
