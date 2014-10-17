@@ -17,7 +17,7 @@ BASKETBALL.Team = (function() {
         team.destroy();
       },
 
-      teamPlayers: function(team) {
+      teamPlayers: function(team) { //XXX
         var tPlayers = [];
         var id = team.id;
         var posInd = 0;
